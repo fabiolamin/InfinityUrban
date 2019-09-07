@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlatformManager : MonoBehaviour
 {
-    public GameObject[] platforms;
     private float offSet = 0;
-
+    public GameObject[] platforms;
     private void Start()
     {
         for(int x = 0; x < 6; x++)

@@ -5,12 +5,15 @@ using UnityEngine;
 public class Platform : MonoBehaviour
 {
     private PlatformManager platformManager;
+    private ObstacleManager obstacleManager;
     private bool isCounting = false;
     private float timer = 0.35f;
     void Start()
     {
         GameObject gameObject = GameObject.FindGameObjectWithTag("PlatformManager");
         platformManager = gameObject.GetComponent<PlatformManager>();
+
+        obstacleManager = GetComponent<ObstacleManager>();
     }
 
     private void Update()
@@ -27,6 +30,7 @@ public class Platform : MonoBehaviour
         if(timer < 0)
         {
             platformManager.RecyclePlatform(this.gameObject);
+            obstacleManager.SwitchObstaclesPosition();
             timer = 0.35f;
             isCounting = false;
         }
