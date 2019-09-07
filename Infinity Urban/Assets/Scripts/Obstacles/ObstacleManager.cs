@@ -41,7 +41,7 @@ public class ObstacleManager : MonoBehaviour
                     pos = Random.Range(0, spawnLocations.Length);
                 }
                 int indexObstacle = Random.Range(0, obstacles.Length);
-                GameObject cloneObstacle = Instantiate(obstacles[indexObstacle], spawnLocations[pos].transform.position, Quaternion.Euler(-90, 90, 0));
+                GameObject cloneObstacle = Instantiate(obstacles[indexObstacle], spawnLocations[pos].transform.position, Quaternion.Euler(0, 90, 0));
                 cloneObstacle.transform.parent = this.transform;
                 lastPos = pos;
             }

@@ -438,9 +438,8 @@ MonoBehaviour:
   - {fileID: 1123065754}
   - {fileID: 1609476961}
   obstacles:
-  - {fileID: 100000, guid: 28d375a433cc78c4fa3db00df795f14d, type: 3}
-  - {fileID: 100000, guid: 86948bb7ab2a8274aa6a73f0ed8b64d5, type: 3}
-  - {fileID: 100000, guid: 914351682f086b145ae6774edb5da09b, type: 3}
+  - {fileID: 4181624315482277896, guid: 0522b2c3a292dbd45a37e7c0d5365a18, type: 3}
+  - {fileID: 8776834063523893227, guid: 2eb7b20a1240cc545b9a8ef2da538947, type: 3}
 --- !u!23 &8728022084137859342
 MeshRenderer:
   m_ObjectHideFlags: 0
