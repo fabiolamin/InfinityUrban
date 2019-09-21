@@ -4,25 +4,32 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 2f;
-    TouchInput swipeInput;
+    public int speedValue = 2;
+    Animator animator;
+    TouchInput touchInput;
     Transform wayPoint;
     float posX;
+    [SerializeField]
+    int limitSpeed = 15;
+    [SerializeField]
+    float timeInterval = 4;
     void Awake()
     {
         StartCoroutine(IncreaseSpeed());
         wayPoint = this.transform;
-        swipeInput = GetComponent<TouchInput>();
+        touchInput = GetComponent<TouchInput>();
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
         GetInput();
         Run();
         CalculateDirection();
+        animator.SetInteger("speed", speedValue);
     }
     public void Run()
     {
-        transform.position += new Vector3(posX, 0, 1) * speed * Time.deltaTime;
+        transform.position += new Vector3(posX, 0, 1) * speedValue * Time.deltaTime;
     }
     public void CalculateDirection()
     {
@@ -31,12 +38,12 @@ public class Player : MonoBehaviour
     }
     private void GetInput()
     {
-        if (swipeInput.Swipe() == -1)
+        if (touchInput.Swipe() == -1)
         {
             VerifyDirection(Vector3.left);
         }
 
-        if (swipeInput.Swipe() == 1)
+        if (touchInput.Swipe() == 1)
         {
             VerifyDirection(Vector3.right);
         }
@@ -57,10 +64,10 @@ public class Player : MonoBehaviour
 
     IEnumerator IncreaseSpeed()
     {
-        while (speed < 15)
+        while (speedValue < limitSpeed)
         {
-            yield return new WaitForSeconds(4);
-            speed++;
+            yield return new WaitForSeconds(timeInterval);
+            speedValue++;
         }
     }
 }
