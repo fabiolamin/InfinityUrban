@@ -10,7 +10,7 @@ public class TouchInput : MonoBehaviour
  
     void Start()
     {
-        dragDistance = Screen.height * 15 / 100;
+        dragDistance = Screen.height * 10 / 100;
     }
  
     public int Swipe()
