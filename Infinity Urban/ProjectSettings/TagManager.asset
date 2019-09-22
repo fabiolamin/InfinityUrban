@@ -7,6 +7,10 @@ TagManager:
   - PlatformManager
   - Obstacle
   - WayPoint
+  - Pause
+  - Resume
+  - Restart
+  - Quit
   layers:
   - Default
   - TransparentFX

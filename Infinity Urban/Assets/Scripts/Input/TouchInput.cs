@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TouchInput : MonoBehaviour
 {
@@ -54,10 +55,6 @@ public class TouchInput : MonoBehaviour
                             return -2;
                         }
                     }
-                }
-                else
-                {
-                    //Tap
                 }
             }
         }
