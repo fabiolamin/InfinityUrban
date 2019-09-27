@@ -11,6 +11,7 @@ TagManager:
   - Resume
   - Restart
   - Quit
+  - Home
   layers:
   - Default
   - TransparentFX

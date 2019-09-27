@@ -7,23 +7,29 @@ public class UIManager : MonoBehaviour
 {
     public Player player;
     public Text txtScore;
+    public GameObject imgGameOver;
+    public GameObject imgScore;
     public GameObject btnPause;
     public GameObject btnResume;
     public GameObject btnRestart;
     public GameObject btnQuit;
     public static bool isPaused;
+    public static bool isGameOver;
     public static bool wasRestarted;
     public Text txtPause;
 
     private void Start()
     {
         isPaused = false;
+        isGameOver = false;
         wasRestarted = false;
+        imgScore.SetActive(true);
         btnPause.SetActive(true);
         btnResume.SetActive(false);
         btnRestart.SetActive(false);
         btnQuit.SetActive(false);
         txtPause.enabled = false;
+        imgGameOver.SetActive(false);
     }
 
     void Update()
@@ -31,6 +37,11 @@ public class UIManager : MonoBehaviour
         if(isPaused)
         {
             Pause();
+        }
+
+        else if(isGameOver)
+        {
+            GameOver();
         }
 
         else
@@ -64,5 +75,15 @@ public class UIManager : MonoBehaviour
         btnRestart.SetActive(false);
         btnQuit.SetActive(false);
         txtPause.enabled = false;
+    }
+
+    void GameOver()
+    {
+        player.isUpdatingScore = false;
+        btnPause.SetActive(false);
+        imgScore.SetActive(false);
+        btnRestart.SetActive(false);
+        btnQuit.SetActive(false);
+        imgGameOver.SetActive(true);
     }
 }

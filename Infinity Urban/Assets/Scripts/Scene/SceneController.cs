@@ -31,4 +31,10 @@ public class SceneController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public static void GameOver()
+    {
+        Time.timeScale = 0f;
+        UIManager.isGameOver = true;
+    }
 }
