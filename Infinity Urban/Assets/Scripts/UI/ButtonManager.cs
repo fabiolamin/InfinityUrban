@@ -15,11 +15,13 @@ public class ButtonManager : MonoBehaviour, IPointerClickHandler
             switch(tag)
             {
                 case "Pause":
-                    SceneController.Pause();
+                SceneController.Stop();
+                UIManager.isPaused = true;
                 break;
 
                 case "Resume":
-                    SceneController.Resume();
+                SceneController.Play();
+                UIManager.isPaused = false;
                 break;
 
                 case "Restart":

@@ -3090,12 +3090,17 @@ PrefabInstance:
     - target: {fileID: 1482375427628481522, guid: 776f71c2d669bc84284f6d54647ab2cc,
         type: 3}
       propertyPath: limitSpeed
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1482375427628481522, guid: 776f71c2d669bc84284f6d54647ab2cc,
         type: 3}
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 883939876}
+    - target: {fileID: 1482375427628481522, guid: 776f71c2d669bc84284f6d54647ab2cc,
+        type: 3}
+      propertyPath: timeInterval
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 776f71c2d669bc84284f6d54647ab2cc, type: 3}

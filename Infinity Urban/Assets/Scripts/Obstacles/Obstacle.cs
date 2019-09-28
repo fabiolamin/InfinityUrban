@@ -16,7 +16,8 @@ public class Obstacle : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             scoreManager.CalculateHighScore();
-            SceneController.GameOver();
+            SceneController.Stop();
+            UIManager.isGameOver = true;
         }
     }
 }

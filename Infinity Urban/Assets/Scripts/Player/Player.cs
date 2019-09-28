@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int speedValue = 2;
+    public int speedValue;
     Animator animator;
     TouchInput touchInput;
     Transform wayPoint;
@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     float timeInterval = 4;
     void Awake()
     {
+        speedValue = 4;
         StartCoroutine(IncreaseSpeed());
         wayPoint = this.transform;
         touchInput = GetComponent<TouchInput>();

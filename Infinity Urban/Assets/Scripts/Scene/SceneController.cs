@@ -7,20 +7,13 @@ public class SceneController : MonoBehaviour
 {
     public static void Play()
     {
-        
+        Time.timeScale = 1f;
     }
-    public static void Pause()
+
+    public static void Stop()
     {
         Time.timeScale = 0f;
-        UIManager.isPaused = true;
     }
-
-    public static void Resume()
-    {
-        Time.timeScale = 1f;
-        UIManager.isPaused = false;
-    }
-
     public static void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
