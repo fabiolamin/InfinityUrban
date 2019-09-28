@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public Player player;
     public Text txtScore;
     public GameObject imgGameOver;
+    public Text txtScoreGameOver;
     public GameObject imgScore;
     public GameObject btnPause;
     public GameObject btnResume;
@@ -17,7 +18,7 @@ public class UIManager : MonoBehaviour
     public static bool isGameOver;
     public static bool wasRestarted;
     public Text txtPause;
-
+    public ScoreManager scoreManager;
     private void Start()
     {
         isPaused = false;
@@ -54,12 +55,12 @@ public class UIManager : MonoBehaviour
 
     void ShowScore()
     {
-        txtScore.text = player.score.ToString();
+        txtScore.text = scoreManager.scoreValue.ToString();
     }
 
     void Pause()
     {
-        player.isUpdatingScore = false;
+        scoreManager.isUpdatingScore = false;
         btnPause.SetActive(false);
         btnResume.SetActive(true);
         btnRestart.SetActive(true);
@@ -69,7 +70,7 @@ public class UIManager : MonoBehaviour
 
     void Resume()
     {
-        player.isUpdatingScore = true;
+        scoreManager.isUpdatingScore = true;
         btnPause.SetActive(true);
         btnResume.SetActive(false);
         btnRestart.SetActive(false);
@@ -79,11 +80,12 @@ public class UIManager : MonoBehaviour
 
     void GameOver()
     {
-        player.isUpdatingScore = false;
+        scoreManager.isUpdatingScore = false;
         btnPause.SetActive(false);
         imgScore.SetActive(false);
         btnRestart.SetActive(false);
         btnQuit.SetActive(false);
         imgGameOver.SetActive(true);
+        txtScoreGameOver.text = scoreManager.scoreValue.ToString();
     }
 }

@@ -13,19 +13,12 @@ public class Player : MonoBehaviour
     int limitSpeed = 15;
     [SerializeField]
     float timeInterval = 4;
-    [HideInInspector]
-    public int score;
-    [HideInInspector]
-    public bool isUpdatingScore;
-
     void Awake()
     {
         StartCoroutine(IncreaseSpeed());
         wayPoint = this.transform;
         touchInput = GetComponent<TouchInput>();
         animator = GetComponent<Animator>();
-        isUpdatingScore = true;
-        score = 0;
     }
     void Update()
     {
@@ -33,10 +26,6 @@ public class Player : MonoBehaviour
         Run();
         CalculateDirection();
         animator.SetInteger("speed", speedValue);
-        if(isUpdatingScore)
-        {
-            score += (int)Time.time;
-        }
     }
     public void Run()
     {

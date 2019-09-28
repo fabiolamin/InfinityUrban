@@ -12,6 +12,7 @@ TagManager:
   - Restart
   - Quit
   - Home
+  - ScoreManager
   layers:
   - Default
   - TransparentFX
