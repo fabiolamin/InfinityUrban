@@ -20,6 +20,12 @@ public class SceneController : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public static void StartGame()
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
+    }
+
     public static void Quit()
     {
         Application.Quit();

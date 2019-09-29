@@ -13,6 +13,7 @@ TagManager:
   - Quit
   - Home
   - ScoreManager
+  - Start
   layers:
   - Default
   - TransparentFX

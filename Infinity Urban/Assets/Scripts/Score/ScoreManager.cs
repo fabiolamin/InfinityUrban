@@ -29,16 +29,16 @@ public class ScoreManager : MonoBehaviour
 
     public void CalculateHighScore()
     {
-        if(PlayerPrefs.GetInt("HighScore") == 0)
+        if(PlayerPrefs.GetInt("Highscore") == 0)
         {
-            PlayerPrefs.SetInt("HighScore", scoreValue);
+            PlayerPrefs.SetInt("Highscore", scoreValue);
         }
 
         else
         {
-            if(scoreValue > PlayerPrefs.GetInt("HighScore"))
+            if(scoreValue > PlayerPrefs.GetInt("Highscore"))
             {
-                PlayerPrefs.SetInt("HighScore", scoreValue);
+                PlayerPrefs.SetInt("Highscore", scoreValue);
             }
         }
     }

@@ -28,7 +28,11 @@ public class ButtonManager : MonoBehaviour, IPointerClickHandler
                     SceneController.Restart();
                 break;
 
-                case "Quit":
+                case "Start":
+                SceneController.StartGame();
+                break;
+
+            case "Quit":
                     SceneController.Quit();
                 break;
             }
