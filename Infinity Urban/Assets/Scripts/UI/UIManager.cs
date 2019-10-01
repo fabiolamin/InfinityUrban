@@ -6,19 +6,17 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Player player;
+    public ScoreManager scoreManager;
     public Text txtScore;
-    public GameObject imgGameOver;
     public Text txtScoreGameOver;
+    public GameObject panelGameOver;
+    public GameObject panelPaused;
     public GameObject imgScore;
     public GameObject btnPause;
-    public GameObject btnResume;
-    public GameObject btnRestart;
-    public GameObject btnQuit;
     public static bool isPaused;
     public static bool isGameOver;
     public static bool wasRestarted;
-    public Text txtPause;
-    public ScoreManager scoreManager;
+    
     private void Start()
     {
         isPaused = false;
@@ -26,11 +24,8 @@ public class UIManager : MonoBehaviour
         wasRestarted = false;
         imgScore.SetActive(true);
         btnPause.SetActive(true);
-        btnResume.SetActive(false);
-        btnRestart.SetActive(false);
-        btnQuit.SetActive(false);
-        txtPause.enabled = false;
-        imgGameOver.SetActive(false);
+        panelPaused.SetActive(false);
+        panelGameOver.SetActive(false);
     }
 
     void Update()
@@ -62,20 +57,14 @@ public class UIManager : MonoBehaviour
     {
         scoreManager.isUpdatingScore = false;
         btnPause.SetActive(false);
-        btnResume.SetActive(true);
-        btnRestart.SetActive(true);
-        btnQuit.SetActive(true);
-        txtPause.enabled = true;
+        panelPaused.SetActive(true);
     }
 
     void Resume()
     {
         scoreManager.isUpdatingScore = true;
         btnPause.SetActive(true);
-        btnResume.SetActive(false);
-        btnRestart.SetActive(false);
-        btnQuit.SetActive(false);
-        txtPause.enabled = false;
+        panelPaused.SetActive(false);
     }
 
     void GameOver()
@@ -83,9 +72,7 @@ public class UIManager : MonoBehaviour
         scoreManager.isUpdatingScore = false;
         btnPause.SetActive(false);
         imgScore.SetActive(false);
-        btnRestart.SetActive(false);
-        btnQuit.SetActive(false);
-        imgGameOver.SetActive(true);
+        panelGameOver.SetActive(true);
         txtScoreGameOver.text = scoreManager.scoreValue.ToString();
     }
 }

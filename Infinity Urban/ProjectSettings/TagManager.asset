@@ -11,9 +11,9 @@ TagManager:
   - Resume
   - Restart
   - Quit
-  - Home
   - ScoreManager
   - Start
+  - MainMenu
   layers:
   - Default
   - TransparentFX

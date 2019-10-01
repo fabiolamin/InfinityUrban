@@ -29,17 +29,9 @@ public class ScoreManager : MonoBehaviour
 
     public void CalculateHighScore()
     {
-        if(PlayerPrefs.GetInt("Highscore") == 0)
+        if (scoreValue > PlayerPrefs.GetInt("Highscore"))
         {
             PlayerPrefs.SetInt("Highscore", scoreValue);
-        }
-
-        else
-        {
-            if(scoreValue > PlayerPrefs.GetInt("Highscore"))
-            {
-                PlayerPrefs.SetInt("Highscore", scoreValue);
-            }
         }
     }
 }
