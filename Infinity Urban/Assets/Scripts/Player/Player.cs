@@ -5,9 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int speedValue;
-    Animator animator;
+    Animator playerAnimator;
     TouchInput touchInput;
     Transform wayPoint;
+    Collider playerCollider;
     float posX;
     [SerializeField]
     int limitSpeed = 15;
@@ -15,18 +16,21 @@ public class Player : MonoBehaviour
     float timeInterval = 4;
     void Awake()
     {
+        playerCollider = GetComponent<Collider>();
+        playerCollider.enabled = false;
+        StartCoroutine(EnableCollider());
         speedValue = 4;
         StartCoroutine(IncreaseSpeed());
         wayPoint = this.transform;
         touchInput = GetComponent<TouchInput>();
-        animator = GetComponent<Animator>();
+        playerAnimator = GetComponent<Animator>();
     }
     void Update()
     {
         GetInput();
         Run();
         CalculateDirection();
-        animator.SetInteger("speed", speedValue);
+        playerAnimator.SetInteger("speed", speedValue);
     }
     public void Run()
     {
@@ -70,5 +74,11 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(timeInterval);
             speedValue++;
         }
+    }
+
+    IEnumerator EnableCollider()
+    {
+        yield return new WaitForSeconds(3);
+        playerCollider.enabled = true;
     }
 }

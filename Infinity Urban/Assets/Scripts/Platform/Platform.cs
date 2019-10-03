@@ -7,7 +7,7 @@ public class Platform : MonoBehaviour
     private PlatformManager platformManager;
     private ObstacleManager obstacleManager;
     private bool isCounting = false;
-    private float timer = 1.2f;
+    private float timer = 1.5f;
     void Start()
     {
         GameObject gameObject = GameObject.FindGameObjectWithTag("PlatformManager");
@@ -31,7 +31,7 @@ public class Platform : MonoBehaviour
         {
             platformManager.RecyclePlatform(this.gameObject);
             obstacleManager.SwitchObstaclesPosition();
-            timer = 0.8f;
+            timer = 0.7f;
             isCounting = false;
         }
     }
