@@ -23,8 +23,6 @@ public class UIManager : MonoBehaviour
         isGameOver = false;
         wasRestarted = false;
         imgScore.SetActive(true);
-        btnPause.SetActive(true);
-        panelPaused.SetActive(false);
         panelGameOver.SetActive(false);
     }
 
