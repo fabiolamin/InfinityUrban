@@ -14,6 +14,7 @@ TagManager:
   - ScoreManager
   - Start
   - MainMenu
+  - AudioManager
   layers:
   - Default
   - TransparentFX

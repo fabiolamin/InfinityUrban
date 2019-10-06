@@ -5,8 +5,16 @@ using UnityEngine.EventSystems;
 
 public class ButtonManager : MonoBehaviour, IPointerClickHandler
 {
+    AudioManager audioManager;
+
+    private void Start()
+    {
+        GameObject gameObject = GameObject.FindGameObjectWithTag("AudioManager");
+        audioManager = gameObject.GetComponent<AudioManager>();
+    }
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
+        audioManager.PlaySoundEffect(1);
         HandleTouchEvent(this.gameObject.tag);
     }
 
